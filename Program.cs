@@ -38,8 +38,9 @@ namespace ProductReviewManagement
                 new ProductReview(){ProductID=25,UserID=2,Rating=6,Review="Average",isLike=true}
             };
 
-            ProductReviewRepository productReview = new ProductReviewRepository();
-            productReview.GetTopThreeProducts(productReviewList);
+            ProductReviewRepository productReviewRepository = new ProductReviewRepository();
+            productReviewRepository.GetTopThreeProducts(productReviewList);
+            productReviewRepository.RetrieveProductsForCondition(productReviewList);
 
         }
     }
