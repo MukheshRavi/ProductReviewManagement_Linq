@@ -41,6 +41,7 @@ namespace ProductReviewManagement
             ProductReviewRepository productReviewRepository = new ProductReviewRepository();
             productReviewRepository.GetTopThreeProducts(productReviewList);
             productReviewRepository.RetrieveProductsForCondition(productReviewList);
+            productReviewRepository.CountByProductID(productReviewList);
 
         }
     }
