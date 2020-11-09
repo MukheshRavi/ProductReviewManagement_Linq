@@ -42,7 +42,7 @@ namespace ProductReviewManagement
             productReviewRepository.GetTopThreeProducts(productReviewList);
             productReviewRepository.RetrieveProductsForCondition(productReviewList);
             productReviewRepository.CountByProductID(productReviewList);
-            productReviewRepository.SkipTopFiveRecords(productReviewList);
+            productReviewRepository.GetProductIDAndReview(productReviewList);
 
         }
     }
