@@ -38,13 +38,14 @@ namespace ProductReviewManagement
                 new ProductReview(){ProductID=25,UserID=2,Rating=6,Review="Average",isLike=true}
             };
 
-            ProductReviewRepository productReviewRepository = new ProductReviewRepository();
-            productReviewRepository.GetTopThreeProducts(productReviewList);
-            productReviewRepository.RetrieveProductsForCondition(productReviewList);
-            productReviewRepository.CountByProductID(productReviewList);
-            productReviewRepository.GetProductIDAndReview(productReviewList);
-            productReviewRepository.SkipTopFive(productReviewList);
-            productReviewRepository.GetProductIDAndReviewUsingSelect(productReviewList);
+            //ProductReviewRepository productReviewRepository = new ProductReviewRepository();
+            //productReviewRepository.GetTopThreeProducts(productReviewList);
+            //productReviewRepository.RetrieveProductsForCondition(productReviewList);
+            //productReviewRepository.CountByProductID(productReviewList);
+            //productReviewRepository.GetProductIDAndReview(productReviewList);
+            //productReviewRepository.SkipTopFive(productReviewList);
+            //productReviewRepository.GetProductIDAndReviewUsingSelect(productReviewList);
+            new ProductReviewDataTable();
 
         }
     }
