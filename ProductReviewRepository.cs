@@ -49,17 +49,17 @@ namespace ProductReviewManagement
             }
         }
         /// <summary>
-        /// UC 6:
-        /// Skips the top 5 entries from the list
+        /// UC 5:
+        /// Returns the product id and review of all the products
         /// </summary>
         /// <param name="list"></param>
-        public void SkipTopFiveRecords(List<ProductReview> list)
+        public void GetProductIDAndReview(List<ProductReview> list)
         {
             var recordedData = (from products in list
-                                select products).Skip(5);
+                                select new { products.ProductID, products.Review });
             foreach (var productReview in recordedData)
             {
-                Console.WriteLine("Product ID: " + productReview.ProductID + "User ID: " + productReview.UserID + "Rating: " + productReview.Rating + "Review: " + productReview.Review);
+                Console.WriteLine("Product ID: " + productReview.ProductID + "\tReviews: " + productReview.Review);
             }
         }
     }
