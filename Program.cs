@@ -43,6 +43,7 @@ namespace ProductReviewManagement
             productReviewRepository.RetrieveProductsForCondition(productReviewList);
             productReviewRepository.CountByProductID(productReviewList);
             productReviewRepository.GetProductIDAndReview(productReviewList);
+            productReviewRepository.SkipTopFive(productReviewList);
 
         }
     }
