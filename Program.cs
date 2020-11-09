@@ -44,6 +44,7 @@ namespace ProductReviewManagement
             productReviewRepository.CountByProductID(productReviewList);
             productReviewRepository.GetProductIDAndReview(productReviewList);
             productReviewRepository.SkipTopFive(productReviewList);
+            productReviewRepository.GetProductIDAndReviewUsingSelect(productReviewList);
 
         }
     }
