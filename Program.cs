@@ -45,7 +45,7 @@ namespace ProductReviewManagement
             //productReviewRepository.GetProductIDAndReview(productReviewList);
             //productReviewRepository.SkipTopFive(productReviewList);
             //productReviewRepository.GetProductIDAndReviewUsingSelect(productReviewList);
-            new ProductReviewDataTable();
+            new ProductReviewDataTable().RetrieveDataWithIsLike();
 
         }
     }
