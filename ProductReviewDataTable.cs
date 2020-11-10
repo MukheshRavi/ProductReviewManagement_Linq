@@ -7,13 +7,13 @@ namespace ProductReviewManagement
 {
     class ProductReviewDataTable
     {
+        DataTable table = new DataTable();
         /// <summary>
         /// UC 8: 
         /// Create data table and add data to it
         /// </summary>
         public void CreateDataTable()
         {
-            DataTable table = new DataTable();
             ///Adding Columns
             table.Columns.Add("UserID");
             table.Columns.Add("ProductID");
@@ -41,6 +41,21 @@ namespace ProductReviewManagement
             table.Rows.Add("18", "21",7, "Average", false);
             table.Rows.Add("19", "22", 10, "Excellent", true);
             table.Rows.Add("20", "21", 0, "Poor", true);
+        }
+        /// <summary>
+        /// UC 9:
+        /// Retrieve data from table by isLike condition
+        /// </summary>
+        public void RetrieveDataWithIsLike()
+        {
+            CreateDataTable();
+            var recordedData = from products in table.AsEnumerable()
+                               where products.Field<bool>("isLike") == true
+                               select products;
+            foreach (var productReview in recordedData)
+            {
+                Console.WriteLine("Product ID: " + productReview.Field<string>("ProductID") + " UserID: " + productReview.Field<string>("UserID") + " Rating: " + productReview.Field<string>("Rating") + " Review: " + productReview.Field<string>("Review") + " isLike: " + productReview.Field<string>("isLike"));
+            }
         }
     }
 }
