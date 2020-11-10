@@ -49,7 +49,8 @@ namespace ProductReviewManagement
             productReviewDataTable.CreateDataTable();
             /// productReviewDataTable.RetrieveDataWithIsLike();
             ///productReviewDataTable.AverageRatingByProductID();
-            productReviewDataTable.RetrieveDataWithReview();
+            ///productReviewDataTable.RetrieveDataWithReview();
+            productReviewDataTable.RetrieveDataWithUserID();
         }
     }
 }

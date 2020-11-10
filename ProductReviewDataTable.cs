@@ -38,10 +38,10 @@ namespace ProductReviewManagement
             table.Rows.Add("14", "2", 5, "Good", "true");
             table.Rows.Add("15", "20", 1, "bad", "false");
             table.Rows.Add("16", "15", 10, "Excellent", "true");
-            table.Rows.Add("17", "12", 1, "Poor", "true");
-            table.Rows.Add("18", "21",7, "Average", "false");
-            table.Rows.Add("19", "22", 10, "Excellent", "true");
-            table.Rows.Add("20", "21", 0, "Poor", "true");
+            table.Rows.Add("10", "12", 1, "Poor", "true");
+            table.Rows.Add("10", "21",7, "Average", "false");
+            table.Rows.Add("10", "22", 10, "Excellent", "true");
+            table.Rows.Add("10", "21", 0, "Poor", "true");
         }
         /// <summary>
         /// UC 9:
@@ -86,6 +86,23 @@ namespace ProductReviewManagement
                 Console.WriteLine("Product ID: " + productReview.Field<string>("ProductID") + " UserID: " + productReview.Field<string>("UserID")
                     + " Rating: " + productReview.Field<int>("Rating") + " Review: " + productReview.Field<string>("Review") + " isLike: " 
                     + productReview.Field<string>("isLike"));
+            }
+        }
+        /// <summary>
+        /// UC 12:
+        /// Retrieve data from table by order id condition sorted with rating
+        /// </summary>
+        public void RetrieveDataWithUserID()
+        {
+            var recordedData = from products in table.AsEnumerable()
+                               where products.Field<string>("UserID") == "10"
+                               orderby products.Field<int>("Rating") descending
+                               select products;
+            foreach (var productReview in recordedData)
+            {
+                Console.WriteLine("Product ID: " + productReview.Field<string>("ProductID") + " UserID: " + productReview.Field<string>("UserID")
+                    + " Rating: " + productReview.Field<int>("Rating") + " Review: " + productReview.Field<string>("Review")
+                    + " isLike: " + productReview.Field<string>("isLike"));
             }
         }
     }
